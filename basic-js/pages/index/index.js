@@ -3,7 +3,7 @@ const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia0
 
 Page({
   data: {
-    motto: 'Hello World',
+    motto: 'Hello World，入门了！！！！！',
     userInfo: {
       avatarUrl: defaultAvatarUrl,
       nickName: '',
@@ -11,6 +11,14 @@ Page({
     hasUserInfo: false,
     canIUseGetUserProfile: wx.canIUse('getUserProfile'),
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
+  },
+  scanProductCode() {
+    wx.scanCode({
+      onlyFromCamera: true,
+      success(res) {
+        console.log("扫码成功：" + JSON.stringify(res))
+      }
+    })
   },
   bindViewTap() {
     wx.navigateTo({
@@ -46,4 +54,5 @@ Page({
       }
     })
   },
+
 })

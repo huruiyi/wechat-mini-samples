@@ -21,6 +21,7 @@
       </block>
     </view>
     <view class="usermotto">
+      <button type="primary" bindtap="scanProductCode">扫一扫</button>
       <text class="user-motto">{{motto}}</text>
     </view>
   </view>
