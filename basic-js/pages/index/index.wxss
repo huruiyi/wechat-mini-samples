@@ -4,6 +4,7 @@ page {
   display: flex;
   flex-direction: column;
 }
+
 .scrollarea {
   flex: 1;
   overflow-y: hidden;
@@ -59,4 +60,8 @@ page {
 
 .nickname-input {
   flex: 1;
+}
+
+.btn-view .btn {
+  margin-top: 5px;
 }

@@ -21,8 +21,14 @@
       </block>
     </view>
     <view class="usermotto">
-      <button type="primary" bindtap="scanProductCode">扫一扫</button>
       <text class="user-motto">{{motto}}</text>
+    </view>
+    <view class="btn-view">
+      <button class="btn" type="primary" bindtap="scanProductCode">扫一扫</button>
+      <button class="btn" type="warn" bindtap="getUserProfile">获取用户信息</button>
+
+      <button class="btn" type="default" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+
     </view>
   </view>
 </scroll-view>

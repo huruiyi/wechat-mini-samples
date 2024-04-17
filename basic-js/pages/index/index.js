@@ -20,6 +20,39 @@ Page({
       }
     })
   },
+  getPhoneNumber(e) {
+    console.log(e.detail.errMsg)
+    console.log(e.detail.iv)
+    console.log(e.detail.encryptedData)
+
+    console.log("xx:" + this.data.userInfo.sessionKey)
+    wx.login({
+      success: (res) => {
+        console.log("login success ,code :" + res.code)
+      },
+    })
+    if (e.detail.errMsg == 'getPhoneNumber:fail user deny') {
+      wx.showModal({
+        title: '提示',
+        showCancel: false,
+        content: '未授权',
+        success: function (res) {
+          debugger
+          console.log("getphonenumber fail ,code :" + res.errMsg)
+        }
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        showCancel: false,
+        content: '同意授权',
+        success: function (res) {
+          debugger
+          console.log("getphonenumber success ,code :" + res.JSON)
+        }
+      })
+    }
+  },
   bindViewTap() {
     wx.navigateTo({
       url: '../logs/logs'
