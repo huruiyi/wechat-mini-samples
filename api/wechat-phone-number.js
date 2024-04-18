@@ -16,11 +16,11 @@ function decodePhoneNumber(sessionKey, encryptedData, iv) {
   if (decoded.watermark.appid !== "wx2aade0a32a20e7a4") {
     throw new Error('Invalid appId');
   }
-
+  debugger
   return decoded;
 }
 
-var data= decodePhoneNumber("Rn96ndKlRyr9OSLUYJjcgQ==",
-    "jKjbCouZCadnYOXAQ6k6hm5ksJaV3fqOnkNMv2LZRwzzblIMYO82SQAAYnGDv2qFJNDs90hWQBwM9lNX4l+Y5HujzbN2fP3/jkTz315ApabUV15C9eTmoNLQnsuf0Vbigh0GPUIJ0IFprPSOYVjLG7UWZlb4nj8EfCVfHbOvwBzLk7hdCgcIBltHqye/XwnmjtYH2pZqkljewj06CVcXhg==",
-    "4pGaR3ExN97+UPCup5sKpQ==")
+var data = decodePhoneNumber("Rn96ndKlRyr9OSLUYJjcgQ==",
+  "jKjbCouZCadnYOXAQ6k6hm5ksJaV3fqOnkNMv2LZRwzzblIMYO82SQAAYnGDv2qFJNDs90hWQBwM9lNX4l+Y5HujzbN2fP3/jkTz315ApabUV15C9eTmoNLQnsuf0Vbigh0GPUIJ0IFprPSOYVjLG7UWZlb4nj8EfCVfHbOvwBzLk7hdCgcIBltHqye/XwnmjtYH2pZqkljewj06CVcXhg==",
+  "4pGaR3ExN97+UPCup5sKpQ==")
 console.log(data)

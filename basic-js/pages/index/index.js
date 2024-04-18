@@ -1,6 +1,6 @@
 // index.js
 const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
-
+const app = getApp()
 Page({
   data: {
     motto: 'Hello World，入门了！！！！！',
@@ -12,7 +12,28 @@ Page({
     canIUseGetUserProfile: wx.canIUse('getUserProfile'),
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
   },
-  scanProductCode() {
+  scanProductCodeV1() {
+    wx.scanCode({
+      onlyFromCamera: true,
+      success(res) {
+        debugger
+        wx.showModal({
+          title: '扫描结果',
+          content: res.result,
+          complete: (res) => {
+            if (res.cancel) {
+
+            }
+            if (res.confirm) {
+              wx.exitMiniProgram()
+            }
+          }
+        })
+        console.log("扫码成功：" + JSON.stringify(res))
+      }
+    })
+  },
+  scanProductCodeV2() {
     wx.scanCode({
       onlyFromCamera: true,
       success(res) {
@@ -20,12 +41,25 @@ Page({
       }
     })
   },
-  getPhoneNumber(e) {
+  getPhoneNumberV1: function (e) {
+    console.log(e)
+    console.log("iv:" + e.detail.iv);
+    console.log("encryptedData:" + e.detail.encryptedData);
+    app.globalData.iv = e.detail.iv
+    app.globalData.encryptedData = e.detail.encryptedData
+    debugger
+    wx.login({
+      success: res => {
+        console.log(res)
+        console.log("code:" + res.code);
+        app.globalData.code = res.code
+      }
+    })
+  },
+  getPhoneNumberV2(e) {
     console.log(e.detail.errMsg)
     console.log(e.detail.iv)
     console.log(e.detail.encryptedData)
-
-    console.log("xx:" + this.data.userInfo.sessionKey)
     wx.login({
       success: (res) => {
         console.log("login success ,code :" + res.code)
@@ -52,6 +86,10 @@ Page({
         }
       })
     }
+  },
+  handleContact(e) {
+    console.log(e.detail.path)
+    console.log(e.detail.query)
   },
   bindViewTap() {
     wx.navigateTo({
@@ -87,5 +125,4 @@ Page({
       }
     })
   },
-
 })

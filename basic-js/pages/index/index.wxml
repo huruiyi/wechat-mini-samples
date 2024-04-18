@@ -20,15 +20,24 @@
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       </block>
     </view>
+
+    <view class="btn-view">
+      <view>
+        <button class="btn btn-inline" plain="true" type="primary" bindtap="scanProductCodeV1">扫一扫-1</button>
+        <button class="btn btn-inline" plain="true" type="primary" bindtap="scanProductCodeV2">扫一扫-2</button>
+      </view>
+      <view>
+        <button class="btn btn-inline" plain="true" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumberV1">获取手机号-1</button>
+        <button class="btn btn-inline" plain="true" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumberV2">获取手机号-2</button>
+      </view>
+      <view>
+        <button class="btn btn-inline" plain="true" type="primary" open-type="contact" bindcontact="handleContact">客服系统</button>
+        <button class="btn btn-inline" plain="true" type="primary" bindtap="getUserProfile">用户信息</button>
+      </view>
+    </view>
+
     <view class="usermotto">
       <text class="user-motto">{{motto}}</text>
-    </view>
-    <view class="btn-view">
-      <button class="btn" type="primary" bindtap="scanProductCode">扫一扫</button>
-      <button class="btn" type="warn" bindtap="getUserProfile">获取用户信息</button>
-
-      <button class="btn" type="default" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
-
     </view>
   </view>
 </scroll-view>
