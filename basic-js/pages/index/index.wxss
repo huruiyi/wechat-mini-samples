@@ -18,8 +18,6 @@ page {
   width: 80%;
 }
 
-
-
 .userinfo-avatar {
   overflow: hidden;
   width: 128rpx;
@@ -34,8 +32,10 @@ page {
 
 .usermotto .user-motto {
   padding: 5px;
+  border-radius: 20px;
   display: inline-block;
-  background-color: antiquewhite;
+  color: white;
+  background-color: #198754;
 }
 
 .avatar-wrapper {
@@ -70,11 +70,21 @@ page {
   flex: 1;
 }
 
+.btn-view {
+  align-items: center;
+  color: #aaa;
+  width: 90%;
+}
+
 .btn-view .btn {
   margin-top: 5px;
 }
 
 .btn-view .btn-inline {
   display: inline-block;
-  width: 50%;
+  width: 45%;
+}
+
+.btn-view-group {
+  display: flex;
 }

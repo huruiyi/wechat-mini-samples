@@ -3,7 +3,7 @@ const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia0
 const app = getApp()
 Page({
   data: {
-    motto: 'Hello World，入门了！！！！！',
+    motto: 'Hello World，微信小程序入门程序！！！',
     userInfo: {
       avatarUrl: defaultAvatarUrl,
       nickName: '',

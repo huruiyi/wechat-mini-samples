@@ -22,15 +22,15 @@
     </view>
 
     <view class="btn-view">
-      <view>
+      <view class="btn-view-group">
         <button class="btn btn-inline" plain="true" type="primary" bindtap="scanProductCodeV1">扫一扫-1</button>
         <button class="btn btn-inline" plain="true" type="primary" bindtap="scanProductCodeV2">扫一扫-2</button>
       </view>
-      <view>
+      <view class="btn-view-group">
         <button class="btn btn-inline" plain="true" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumberV1">获取手机号-1</button>
         <button class="btn btn-inline" plain="true" type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumberV2">获取手机号-2</button>
       </view>
-      <view>
+      <view class="btn-view-group">
         <button class="btn btn-inline" plain="true" type="primary" open-type="contact" bindcontact="handleContact">客服系统</button>
         <button class="btn btn-inline" plain="true" type="primary" bindtap="getUserProfile">用户信息</button>
       </view>
